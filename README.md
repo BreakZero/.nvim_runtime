@@ -12,7 +12,7 @@ git clone https://github.com/BreakZero/.nvim_runtime.git ~/.config/nvim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-#### 4. Init Plug for nvim
+#### 4. Init Plug for nvim (in nvim)
 ```vim
-:PlugInstall (in nvim)
+:PlugInstall
 ```
