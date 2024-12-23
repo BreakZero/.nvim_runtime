@@ -39,14 +39,6 @@ let mapleader = " "
 imap jj <Esc>
 imap jk <Esc>
 
-" NERDTree 插件配置
-autocmd vimenter * if !argc() | NERDTree | endif   " 自动打开 NERDTree
-autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif " NERDTree 是唯一窗口时自动退出 Vim
-let NERDTreeShowHidden = 1        " 显示隐藏文件
-let NERDTreeWinPos = "left"       " NERDTree 窗口位置为左侧
-let NERDTreeWinSize = 31          " NERDTree 窗口宽度
-let g:NERDTreeShowIcons = 1       " 启用文件图标（需要 nerd-fonts 字体支持）
-
 " 文件操作快捷键
 nnoremap <leader>w :w<CR>                      " 保存文件
 nnoremap <leader>q :q<CR>                      " 退出 Vim
@@ -157,6 +149,14 @@ nnoremap <leader>p :Files<CR>
 set laststatus=2                        " 启用状态栏
 
 " NERDTree 快捷键
+autocmd vimenter * if !argc() | NERDTree | endif   " 自动打开 NERDTree
+autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif " NERDTree 是唯一窗口时自动退出 Vim
+let NERDTreeShowHidden = 1        " 显示隐藏文件
+let NERDTreeWinPos = "left"       " NERDTree 窗口位置为左侧
+let NERDTreeWinSize = 31          " NERDTree 窗口宽度
+let g:NERDTreeShowIcons = 1       " 启用文件图标（需要 nerd-fonts 字体支持）
+
 nnoremap <leader>n :NERDTreeToggle<CR>         " 切换 NERDTree
 nnoremap <leader>f :NERDTreeFind<CR>           " 定位当前文件
 nnoremap <Leader>nn :NERDTreeFocus<CR>
+
