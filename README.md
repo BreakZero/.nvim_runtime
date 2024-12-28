@@ -1,19 +1,23 @@
 ### Setup
-#### 1. Install neovim with brew
+#### 1. Install Neovim via Homebrew
+To install Neovim, run the following command:
 ```shell
 brew install neovim
 ```
-#### 2. Get configuration into local
+#### 2. Download the Configuration
+Get the default Neovim configuration by running:
 ```shell
 mkdir -p ~/.config/nvim
 curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/BreakZero/.nvim_runtime/main/nvim/init.vim
 ```
-#### 3. Install vim-plug
+#### 3. Install vim-plug Plugin Manager
+To install the `vim-plug` plugin manager, run:
 ```shell
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-#### 4. Init Plug for nvim (in nvim)
+#### 4. Initialize Plugins in Neovim
+After starting Neovim, install the plugins by running the following command:
 ```vim
 :PlugInstall
 ```
