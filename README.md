@@ -1,14 +1,15 @@
 ### Setup
 #### 1. Install neovim with brew
-```sh
+```shell
 brew install neovim
 ```
-#### 2. Clone nvim folder into local
-```sh
-git clone https://github.com/BreakZero/.nvim_runtime.git ~/.config/nvim
+#### 2. Get configuration into local
+```shell
+mkdir -p ~/.config/nvim
+curl -o ~/.config/nvim/init.vim https://raw.githubusercontent.com/BreakZero/.nvim_runtime/main/nvim/init.vim
 ```
 #### 3. Install vim-plug
-```sh
+```shell
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
@@ -16,3 +17,37 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```vim
 :PlugInstall
 ```
+
+### Others
+
+#### Replace vim with nvim
+If you want to use nvim as a replacement for vim, follow these steps:
+1. Open your ~/.zshrc file:
+```shell
+nano ~/.zshrc
+```
+2. Add the following line:
+```shell
+alias vim="nvim"
+```
+3. Save the file and apply the changes by running:
+```shell
+source ~/.zshrc
+```
+
+#### Set nvim as the default Git editor
+To configure nvim as Git’s default editor, follow these steps:
+
+1. Set the Git editor path:
+```shell
+git config --global core.editor "{nvim_path}"
+```
+Replace {nvim_path} with the full path to your nvim executable. For example:
+```shell
+git config --global core.editor "/usr/bin/nvim"
+```
+2. Verify the configuration:
+```shell
+git config --global core.editor
+```
+This should output the path to nvim.
